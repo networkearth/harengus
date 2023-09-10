@@ -9,8 +9,20 @@ Bootstrap(app)
 Markdown(app)
 
 @app.route("/index")
-def stuff():
-    return render_template('stuff.md')
+def index():
+    return render_template('index.md')
+
+@app.route("/meta")
+def meta():
+    return render_template('index.md')
+
+@app.route("/ontology")
+def ontology():
+    return render_template('index.md')
+
+@app.route("/modeling")
+def modeling():
+    return render_template('index.md')
 
 #@app.route("/")
 #def index():
