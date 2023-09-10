@@ -8,9 +8,13 @@ app = Flask(__name__)
 Bootstrap(app)
 Markdown(app)
 
-@app.route("/stuff")
+@app.route("/index")
 def stuff():
     return render_template('stuff.md')
+
+#@app.route("/")
+#def index():
+#    return render_template('index.html')
 
 def lambda_handler(event, context):
     return awsgi.response(app, event, context)
