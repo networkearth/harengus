@@ -2,3 +2,4 @@ flask
 aws-wsgi
 Flask-Markdown
 flask-bootstrap
+werkzeug
