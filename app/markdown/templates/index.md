@@ -16,19 +16,18 @@ In other words, what if knowledge could both be centralized and open source?
 
 They say to start small, so let's give it a go for Atlantic Herring (*Clupea harengus*). This is [`herangus`](https://github.com/networkearth/harengus).
 
-### The [Ontology](/{{environment}}/ontology)
+### The [Ontology]({{environment}}/ontology)
 
 All knowledge starts with getting your [ontology](https://en.wikipedia.org/wiki/Ontology) right. Think of this as defining the lexicon we have to use. Ontology is the scaffolding upon which quantitative modeling is laid. 
 
-### The [Modeling](/{{environment}}/modeling)
+### The [Modeling]({{environment}}/modeling)
 
 Modeling is how we take our ontology and make it quantitive and precise. It's also how we then go ahead and optimize our actions with respect to the world.
 
-### Getting [Meta](/{{environment}}/meta)
+### Getting [Meta]({{environment}}/meta)
 
 Check this out if you're interested in understanding how we go about developing this knowledge base, the ontology, and our modeling. 
 
 {% endfilter %}
-
 
 {% endblock %}
