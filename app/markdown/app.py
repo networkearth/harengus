@@ -13,7 +13,7 @@ app = Flask(__name__)
 Bootstrap(app)
 Markdown(app)
 
-ENVIRONMENT = "" #"/Prod" # "/Stage"
+ENVIRONMENT = "/Prod" # "/Stage"
 
 @app.route("/index")
 def index():
@@ -30,6 +30,14 @@ def ontology():
 @app.route("/modeling")
 def modeling():
     return render_template('modeling.md', environment=ENVIRONMENT)
+
+@app.route("/concern")
+def concern():
+    return render_template('concern.md', environment=ENVIRONMENT)
+
+@app.route("/biomass")
+def biomass():
+    return render_template('biomass.md', environment=ENVIRONMENT)
 
 @app.route('/notdash')
 def notdash():

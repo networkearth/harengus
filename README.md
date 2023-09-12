@@ -8,6 +8,12 @@ sam build
 sam local start-api
 ```
 
+Or
+
+```bash
+sam sync --stack-name "harengus-app" --watch
+```
+
 ## Sources
 
 - https://pythonhosted.org/Flask-Bootstrap/basic-usage.html
