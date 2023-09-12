@@ -1,17 +1,19 @@
 import awsgi	
+import json
  
-from flask import Flask, render_template, current_app
+from flask import Flask, render_template
 from flaskext.markdown import Markdown
 from flask_bootstrap import Bootstrap
 
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from werkzeug.wrappers import Response
+import plotly
+import plotly.express as px
+import pandas as pd
 
 app = Flask(__name__)
 Bootstrap(app)
 Markdown(app)
 
-ENVIRONMENT = "/Prod" # "/Stage"
+ENVIRONMENT = "" #"/Prod" # "/Stage"
 
 @app.route("/index")
 def index():
@@ -28,6 +30,19 @@ def ontology():
 @app.route("/modeling")
 def modeling():
     return render_template('modeling.md', environment=ENVIRONMENT)
+
+@app.route('/notdash')
+def notdash():
+   df = pd.DataFrame({
+      'Fruit': ['Apples', 'Oranges', 'Bananas', 'Apples', 'Oranges', 
+      'Bananas'],
+      'Amount': [4, 1, 2, 2, 4, 5],
+      'City': ['SF', 'SF', 'SF', 'Montreal', 'Montreal', 'Montreal']
+   })
+   fig = px.bar(df, x='Fruit', y='Amount', color='City', 
+      barmode='group')
+   graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+   return render_template('notdash.html', graphJSON=graphJSON)
 
 def lambda_handler(event, context):
     base64_content_types = ["image/png"]
