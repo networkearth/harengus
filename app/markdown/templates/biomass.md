@@ -116,14 +116,40 @@ and getting everything else...
 
 What should immediately jump out to you is that at no point are we actually measuring how many fish are in the ocean whatsoever. We are 100% predicting that number and the fishing mortality and the recruitment based off of this one model. Now this is fine if our inputs are good and our assumptions are as well. So let's walk back through those and consider if these things makes sense.
 
-# Questions
+### Thinking Through Assumptions
 
-- Ages are really what selectivity is based on
-- Age is usually determined from growth
-- Interesting to have just one mean and not to link it to stock size at all
-- Steady state is an interesting assumption...
-- Assumed $M$ seems a bit odd
-- Weights are going to get wild...
+There are several assumptions in this model but the first and perhaps the biggest is that there is no spatial distribution to this data beyond the uniform. The classic problem here comes from our indices of abundance which are more or less equivalent to catch per unit effort. 
+
+Suppose that year after year we get the same catch per unit effort not because the fish population is staying stable but because fishermen are moving from one fishing ground to the next - effectively chasing the fish that are left. Then what would happen is that year after year you'd predict a reasonable biomass, recommend the same catch limits, perhaps wonder why the stock wasn't growing (although that's not really the purpose of these kinds of things), and then suddenly CPUE (catch per unit effort) would plumet and the stock would suddenly "disappear". In order to recognize this was happening you'd need a spatially distributed model, and this is not going to give you that. 
+
+Another big reason this lack of spatial modeling can come back to bite us is because spawning is highly dependent on area. There seem to be distinct stocks of herring that we are modeling all as one. And not only do the stocks differ spatially but the weights, growth, quality of the fish depend on where they come from and the environmental conditions that year. 
+
+Speaking of recruitment isn't it weird that $\bar{N_1}$ is just a constant? That there's no relationship between spawning biomass and recruitment? Seems fishy to me...
+
+The next big one, specific to the herring analysis **cite**, is that the mortality rate is more or less thought of as constant over the years. Yet natural mortality for herring is perhaps one of the more interesting parts of its life history! It is predated upon by whales, birds, other fish, and other marine mammals like seals. Therefore there are likely boom bust relationships going on there that dramatically change $M$ by both year and age class. 
+
+Finally there is the fact that everything is based off of weights **cite**. And weight to age relationships are rather dubious - especially for something like herring. Herring from different spawning grounds grow differently. Different age classes grow differently. And so if you're using weight to age relationships you're likely mixing age classes like crazy!
+
+Speaking of weight, size is what determines selectivity, not age! A gill net catches you because you are a certain size not because you are so many years old... 
+
+#### What People are Finding
+
+....
+
+### What does it all mean?
+
+Clearly our assumptions don't make a whole lot of sense. Which likely means that our biomass estimates are more or less meaningless... is it any wonder then that we're in an overfished condition without having overfished in the past decade? That contradiction comes from an abundance of bad "facts". 
+
+
+## ToDo
+
+- [ ] Where are weights coming from?
+- [ ] Where is mortality coming from?
+- [ ] How are they getting catch by age?
+- [ ] Cite what you're positing
+- [ ] Pull in the reservations from the literature
+  - [ ] Retrospective patterns
+  - [ ] Over predicting stock
   
 {% endfilter %}
 
