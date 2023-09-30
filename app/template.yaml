@@ -18,16 +18,16 @@ Globals:
       - "*/*"
 
 Resources:
-  MarkdownFunction:
+  HarengusBotFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: markdown/
+      CodeUri: bot/
       Handler: app.lambda_handler
       Runtime: python3.9
       Architectures:
         - x86_64
       Events:
-        Markdown:
+        HarengusBot:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
             Path: /{proxy+}
@@ -37,12 +37,12 @@ Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
-  MarkdownApi:
-    Description: "API Gateway endpoint URL for Prod stage for Markdown function"
+  HarengusBotApi:
+    Description: "API Gateway endpoint URL for Prod stage for HarengusBot function"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
-  MarkdownFunction:
-    Description: "Markdown Lambda Function ARN"
-    Value: !GetAtt MarkdownFunction.Arn
-  MarkdownFunctionIamRole:
-    Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt MarkdownFunctionRole.Arn
+  HarengusBotFunction:
+    Description: "HarengusBot Lambda Function ARN"
+    Value: !GetAtt HarengusBotFunction.Arn
+  HarengusBotFunctionIamRole:
+    Description: "Implicit IAM Role created for HarengusBot function"
+    Value: !GetAtt HarengusBotFunctionRole.Arn
