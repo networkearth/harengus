@@ -59,7 +59,7 @@ Now the model actually puts some constraints on these $S$. Specifically it eithe
 
 $$S_{a,y+\tau,g}=S_{a,y,g}e^{N(0,s_{g}^2)}$$
 
-where N(0,s_{g}^2) is a draw from the normal distribution centered at 0 with variance $s_{g}^2$. So if we do want to allow variability in selectivity, this adds some additional parameters. 
+where $N(0,s_{g}^2)$ is a draw from the normal distribution centered at 0 with variance $s_{g}^2$. So if we do want to allow variability in selectivity, this adds some additional parameters. 
 
 ### Recruitment
 

@@ -20,7 +20,6 @@ This points to one of two things - recruitment failed for the resource or we've 
 
 To look at recruitment we need to get age based data from somewhere and see how many year one fish are joining the population each year. 
 
-
 ## Notes
 
 - [Commercial Fishing Landings Database](https://foss.nmfs.noaa.gov/apexfoss/f?p=215:200:14533496384056::NO:::)
