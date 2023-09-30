@@ -9,7 +9,7 @@ app = Flask(__name__)
 Bootstrap(app)
 Markdown(app)
 
-ENVIRONMENT = "/" #"/Prod" # "/Stage"
+ENVIRONMENT = "" #"/Prod" # "/Stage"
 
 @app.route("/index")
 def index():
