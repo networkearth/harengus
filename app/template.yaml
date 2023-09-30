@@ -32,6 +32,13 @@ Resources:
           Properties:
             Path: /{proxy+}
             Method: ANY
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource: arn:aws:secretsmanager:us-east-1:575101084097:secret:harengus_openai_api_key-pCDrm4
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function

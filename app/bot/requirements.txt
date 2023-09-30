@@ -4,3 +4,5 @@ Flask-Markdown
 flask-bootstrap
 plotly
 pandas
+openai
+boto3

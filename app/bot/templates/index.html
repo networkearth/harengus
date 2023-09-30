@@ -10,6 +10,26 @@
 
 We'll find out! This is a work in progress.
 
+<div id="chat-box" class="mb-3">
+    {% for message in messages %}
+        <div class="{{ message.user }}">
+            <strong>{{ message.role.capitalize() }}:</strong> {{ message.content }}
+        </div>
+    {% endfor %}
+</div>
+<form method="post" action="{{environment}}/index">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" name="user_message" placeholder="Type your message here..." required>
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Send</button>
+        </div>
+    </div>
+    {% for message in messages %}
+        <input type="hidden" name="messages" value="{{ message.role }}: {{ message.content }}">
+    {% endfor %}
+</form>
+
 {% endfilter %}
+
 
 {% endblock %}
